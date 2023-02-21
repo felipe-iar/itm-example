@@ -22,9 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <intrinsics.h>
-#include <arm_itm.h>
-#include "waveform.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,10 +47,7 @@ I2S_HandleTypeDef hi2s3;
 SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
-unsigned int iVal = 0, index = 0;
 
-int sine[WAVELENGTH];
-int ramp[WAVELENGTH];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,25 +64,7 @@ void MX_USB_HOST_Process(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void critical_section()
-{
-  /* Update waveform index */
-  ++index;
-  if (index == WAVELENGTH) {
-    ++iVal;
-    index = 0;
-  }
-}
 
-void update_ITM()
-{
-  if (index == 0) {
-    ITM_EVENT32(1, iVal);
-    __no_operation();
-  }
-  ITM_EVENT32(2, sine[index]);
-  ITM_EVENT32(3, ramp[index]);
-}
 /* USER CODE END 0 */
 
 /**
@@ -97,8 +74,6 @@ void update_ITM()
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  makeWave(SINE, sine);
-  makeWave(RAMP, ramp);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -135,11 +110,7 @@ int main(void)
     MX_USB_HOST_Process();
 
     /* USER CODE BEGIN 3 */
-    critical_section();
-    update_ITM();
-
-    /* Delay */
-    while (uwTick % 4 != 0);
+    demo();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
