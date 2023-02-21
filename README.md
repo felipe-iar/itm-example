@@ -10,4 +10,6 @@ The project's device is set to use The STM32-DISCO1 board.
 Below you can see an (optional) conditional breakpoint that breaks when `iVal % 5 == 0` and the tooltip displaying timing data for a selected range:
 <!-- ![image](https://user-images.githubusercontent.com/54443595/220123817-82d2f493-808a-4301-9e66-9bcaf692680c.png) -->
 <!-- ![image](https://user-images.githubusercontent.com/54443595/220137657-10ee6d7c-d763-4249-941b-8a5d4c4fa37e.png) -->
-![image](https://user-images.githubusercontent.com/54443595/220315617-e393d77e-d9c8-447d-9708-f145b6cb5881.png)
+<!-- ![image](https://user-images.githubusercontent.com/54443595/220315617-e393d77e-d9c8-447d-9708-f145b6cb5881.png) -->
+![image](https://user-images.githubusercontent.com/54443595/220344647-4f0bb57a-5be9-42e4-9cfe-73f4d4c2619c.png)
+
