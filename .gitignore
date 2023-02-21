@@ -1,0 +1,8 @@
+EWARM/itm-example
+EWARM/settings/*.bat
+EWARM/settings/*.ps1
+EWARM/settings/*.xcl
+EWARM/settings/*.crun
+EWARM/*.dep
+EWARM/*.log
+
